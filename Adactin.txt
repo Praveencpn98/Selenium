@@ -1,0 +1,95 @@
+                                                                     
+                                                                     
+                                                                     
+                                             
+package org.selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AdactinProject {
+	public static void main(String[] args) {
+		System.setProperty("Webdriver.chrome.driver", "C:\\Users\\Praveen\\eclipse-workspace\\Selenium\\Driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://adactinhotelapp.com/");
+		driver.manage().window().maximize();
+
+		WebElement username = driver.findElement(By.xpath("//*[@id=\"username\"]"));
+		username.sendKeys("praveenV98");
+
+		WebElement Pass = driver.findElement(By.xpath("//*[@id=\"password\"]"));
+		Pass.sendKeys("Praveen98@");
+
+		WebElement loginbtn = driver.findElement(By.id("login"));
+		loginbtn.click();
+
+		WebElement location = driver.findElement(By.id("location"));
+		location.sendKeys("Paris");
+
+		WebElement Hotel = driver.findElement(By.id("hotels"));
+		Hotel.sendKeys("Hotel Creek");
+
+		WebElement Rooms = driver.findElement(By.id("room_type"));
+		Rooms.sendKeys("double");
+
+		WebElement NoOfrooms = driver.findElement(By.id("room_nos"));
+		NoOfrooms.sendKeys("2-Two");
+	
+		WebElement Calender = driver.findElement(By.id("datepick_in"));
+		Calender.sendKeys("datepick_in");
+
+		WebElement Adult = driver.findElement(By.id("adult_room"));
+		Adult.sendKeys("1-One");
+
+		WebElement Child = driver.findElement(By.id("child_room"));
+		Child.sendKeys("0-None");
+
+		WebElement Searchbtn = driver.findElement(By.id("Submit"));
+		Searchbtn.click();
+
+		driver.navigate().forward();
+
+		WebElement Radiobtn = driver.findElement(By.id("radiobutton_0"));
+		Radiobtn.click();
+		
+		WebElement Continuebtn = driver.findElement(By.id("continue"));
+		Continuebtn.click();
+		
+		driver.navigate().forward();
+		
+		WebElement CustName = driver.findElement(By.id("first_name"));
+		CustName.sendKeys("PRAVEEN");
+		
+		WebElement LastName = driver.findElement(By.id("last_name"));
+		LastName.sendKeys("V");
+		
+		WebElement Address = driver.findElement(By.id("address"));
+		Address.sendKeys("NORTH STREET,CHINNAPUNGANERI,VEERANADHAPRAM(PO),K.M.KOVIL(TK),CUDDALORE(DT),608301");
+		
+		WebElement CcNo = driver.findElement(By.id("cc_num"));
+		CcNo.sendKeys("1234567890123456");
+		
+		WebElement CcType = driver.findElement(By.id("cc_type"));
+		CcType.sendKeys("VISA");
+		
+		WebElement Expiry = driver.findElement(By.id("cc_exp_month"));
+		Expiry.sendKeys("May");
+		
+		WebElement Year = driver.findElement(By.id("cc_exp_year"));
+		Year.sendKeys("2022");
+		
+		WebElement CvvNo = driver.findElement(By.id("cc_cvv"));
+		CvvNo.sendKeys("1234567890");
+		
+		driver.navigate().forward();
+		
+		WebElement Bookbtn = driver.findElement(By.id("book_now"));
+		Bookbtn.click();
+		
+		//driver.close();
+	}
+
+
+}
